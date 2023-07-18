@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 
 class Square:
-    def __init__(self, width=0, height=0):
-        self.width = width
-        self.height = height
+    def __init__(self, *args, **kwargs):
+	for key, value in kwargs.items():
+	    setattr(self, key, value)
 
     def area_of_my_square(self):
         """ Calculate the area of the square """
-        return self.width * self.width
+        return self.width * self.height
 
     def perimeter_of_my_square(self):
         """ Calculate the perimeter of the square """
